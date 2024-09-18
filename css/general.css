@@ -1,0 +1,144 @@
+:root {
+  --primary-color: #fff;
+  --secondary-color: #000;
+  --accent-color: #ffd700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =============================================================================================== */
+/* Main Header Styles */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 80px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.main-header .logo {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  align-items: center;
+  margin: 0;
+  transition: gap 0.3s ease;
+}
+
+li {
+  padding: 5px;
+  border-radius: 50px;
+  list-style: none;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+li a {
+  text-decoration: none;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  border-radius: 50px;
+  transition: color 0.3s ease, padding 0.3s ease;
+}
+
+li a img {
+  margin-left: 10px;
+  height: 24px;
+  transition: filter 0.3s ease;
+}
+
+li:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0 10px 10px #ffd90030;
+}
+
+li:active {
+  outline: 2px solid black;
+}
+
+li:hover a {
+  color: var(--secondary-color);
+}
+
+li:hover a img {
+  filter: brightness(0) invert(0);
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #00000030;
+  height: 100%;
+  z-index: 1000;
+  width: 80vw;
+}
+
+.menu nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================================================================================== */
+
+.main-footer {
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-footer p {
+  text-align: center;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+/* =============================================================================================== */
+
+::-webkit-scrollbar {
+  background-color: var(--primary-color);
+  width: 20px;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+/* =============================================================================================== */
+
+::selection {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =============================================================================================== */

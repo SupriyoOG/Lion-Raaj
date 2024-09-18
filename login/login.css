@@ -1,0 +1,115 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  width: 400px;
+  height: 450px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out, box-shadow 0.3s ease;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0 0 25px #00000030;
+  border: 1px solid #00000030;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 90%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: 1px solid #000;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 16px;
+  transition: background-color 0.3s ease, outline 0.3s ease, color 0.3s ease;
+}
+
+input:focus {
+  outline: 1px solid var(--accent-color);
+}
+
+input::placeholder {
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+button {
+  width: 90%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #ceaf00; /* Slightly darker shade of the accent color */
+}
+
+button:active {
+  outline: 2px solid #000;
+}
+
+.switch-form {
+  margin-top: 20px;
+}
+
+.switch-form p {
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+.switch-form a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.switch-form a:hover {
+  text-decoration: underline;
+  color: #d4a600; /* Slightly darker shade of the accent color */
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}

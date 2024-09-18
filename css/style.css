@@ -1,0 +1,228 @@
+/* INDEX.HTML */
+
+/* main */
+
+.hero {
+  text-align: center;
+  padding: 25vh 20px;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(25%) saturate(150%);
+  transition: filter 0.3s ease;
+}
+
+h2,
+p,
+.btn {
+  position: relative;
+  z-index: 1;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #cfcfcf;
+  margin: 50px 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--accent-color);
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 30px;
+  outline: 0px solid var(--accent-color);
+  text-decoration: none;
+  transition: transform 0.3s ease, outline 0.3s ease, background-color 0.3s ease;
+}
+
+a.btn img {
+  margin-left: 10px;
+  height: 24px;
+  vertical-align: middle;
+  filter: brightness(0);
+  transition: transform 0.3s ease;
+}
+
+a.btn:hover {
+  outline: 5px solid #ffd90050;
+  transform: scale(1.05);
+}
+
+a.btn:active {
+  border: 2px solid black;
+}
+
+a.btn:focus {
+  outline: 5px solid #ffd90030;
+  outline-offset: 2px;
+}
+
+/* =============================================================================================== */
+
+:root {
+  --default-color: #fff; /* Default card color */
+}
+
+.preview {
+  padding: 50px;
+  text-align: center;
+  height: 100vh;
+  background: linear-gradient(to right, orange, coral);
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Flexible grid columns */
+  gap: 20px; /* Space between cards */
+  max-width: 1000px; /* Optional: Limit maximum width for larger screens */
+  width: 100%;
+  height: 80%; /* Ensure parent has a defined height */
+  margin: auto; /* Center grid container horizontally */
+}
+
+.card {
+  background: var(--default-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  transform-style: preserve-3d;
+  width: 100%; /* Ensure card uses full width of grid cell */
+  height: 100%; /* Adjusted to use full height of grid cell */
+}
+
+.card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  filter: invert(1);
+}
+
+.card p {
+  font-size: 1.5em;
+  color: #000; /* Text color */
+  margin: 0;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+  transform: scale(1.1); /* Scale up by 1.1 times on hover */
+}
+
+@media (max-width: 768px) {
+  .card {
+    font-size: 1em; /* Adjust font size for readability on smaller screens */
+    height: 300px; /* Adjusted height for smaller screens */
+  }
+
+  .preview {
+    height: auto; /* Ensure preview adjusts to content */
+    padding: 20px; /* Reduce padding on smaller screens */
+  }
+}
+
+/* =============================================================================================== */
+
+/* Popup overlay */
+.popup-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+  z-index: 1000;
+}
+
+/* Popup content */
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00000080; /* White background */
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px; /* Fixed width */
+  max-width: 90%; /* Responsive for smaller screens */
+}
+
+/* Popup message text */
+.popup-content p {
+  font-size: 1.2em;
+  color: #fff; /* Dark text */
+  margin-bottom: 50px; /* Spacing below message */
+}
+
+/* Popup buttons container */
+.popup-buttons {
+  display: flex;
+  justify-content: space-between; /* Space between the two buttons */
+  margin-top: 20px;
+}
+
+/* Confirm and cancel button styling */
+.popup-buttons button {
+  width: 150px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#confirm-btn {
+  background-color: #ffd700; /* Yellow for confirm button */
+  color: #000;
+}
+
+#cancel-btn {
+  background-color: transparent; /* Dark color for cancel button */
+  color: #fff;
+  border: 1px solid yellow;
+}
+
+/* Hover effect for both buttons */
+.popup-buttons button:hover {
+  transform: scale(1.05);
+}

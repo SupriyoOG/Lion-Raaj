@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lion Raaj - Login/Register</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="/css/general.css" />
+</head>
+<body>
+  <header class="main-header">
+    <a class="logo" href="../index.html"><h1>Lion Raaj</h1></a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li>
+          <a href="../index.html">Home <img src="/data/icons/home.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="../contact.html">Contact Us <img src="/data/icons/contact.png" alt="" /></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <!-- Front Face (Login Form) -->
+      <div class="card-face front">
+        <h2>Login</h2>
+        <form onsubmit="validateLoginForm(event)">
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+        <div class="switch-form">
+          <p>Don't have an account? <a href="javascript:void(0)" onclick="flipCard()">Register</a></p>
+        </div>
+      </div>
+
+      <!-- Back Face (Register Form) -->
+      <div class="card-face back">
+        <h2>Register</h2>
+        <form onsubmit="validateRegisterForm(event)">
+          <input type="text" placeholder="Username" required />
+          <input type="email" placeholder="Email" required />
+          <input id="password" type="password" placeholder="Password" required />
+          <button type="submit">Register</button>
+        </form>
+        <div class="switch-form">
+          <p>Already have an account? <a href="javascript:void(0)" onclick="flipCard()">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

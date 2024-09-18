@@ -1,0 +1,55 @@
+main {
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 1.5em;
+  opacity: 0;
+  animation: pop 1s 2s ease forwards;
+}
+
+address {
+  margin: 10px 0;
+  opacity: 0;
+  animation: pop 1s 3s ease forwards;
+}
+
+p {
+  margin: 10px 0;
+  opacity: 0;
+  animation: pop 1s 1s ease forwards;
+}
+
+main a {
+  color: #1e90ff; /* Bright color for links */
+  text-decoration: none;
+  opacity: 0;
+  animation: pop 1s 3s ease forwards;
+}
+
+main a:hover {
+  text-shadow: 0 0 16px currentColor;
+  text-decoration: overline;
+}
+
+@keyframes pop {
+  0% {
+    transform: translate(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
