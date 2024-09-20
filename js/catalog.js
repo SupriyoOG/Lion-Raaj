@@ -62,14 +62,37 @@ window.onload = function () {
   // Show loading bar
   loadingContainer.style.display = "block";
 
-  // Simulate loading process (you can replace this with actual loading logic)
-  setTimeout(() => {
-    loadingBar.style.width = "100%"; // Fill the loading bar
-  }, 100); // Adjust timing as needed
+  // Get all images on the page
+  const images = document.querySelectorAll("img");
+  let loadedImagesCount = 0;
+  const totalImages = images.length;
 
-  // Hide loading bar after loading is complete
-  setTimeout(() => {
-    loadingContainer.style.display = "none"; // Hide loading bar
-    loadingBar.style.width = "0"; // Reset width
-  }, 2000); // Match with the animation duration
+  // Function to check if all images are loaded
+  function imageLoaded() {
+    loadedImagesCount++;
+    if (loadedImagesCount === totalImages) {
+      loadingBar.style.width = "100%"; // Fill the loading bar
+
+      // Hide loading bar after a short delay
+      setTimeout(() => {
+        loadingContainer.style.display = "none"; // Hide loading bar
+        loadingBar.style.width = "0"; // Reset width
+      }, 500); // Delay for visual effect
+    }
+  }
+
+  // Add event listeners to each image
+  images.forEach((img) => {
+    if (img.complete) {
+      imageLoaded(); // If already loaded
+    } else {
+      img.addEventListener("load", imageLoaded);
+      img.addEventListener("error", imageLoaded); // Count errors as well
+    }
+  });
+
+  // If there are no images, just hide the loading bar immediately
+  if (totalImages === 0) {
+    loadingContainer.style.display = "none";
+  }
 };
