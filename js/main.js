@@ -51,3 +51,21 @@ document.querySelectorAll(".card").forEach((card) => {
     card.style.background = defaultColor; // Reset to default color
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const headerPlaceholder = document.getElementById("header-placeholder");
+
+  // Try fetching from the current directory first
+  fetch("header.html")
+    .then((response) => {
+      if (!response.ok) {
+        // If fetching from the current directory fails, try the parent directory
+        return fetch("../header.html");
+      }
+      return response;
+    })
+    .then((response) => response.text())
+    .then((data) => {
+      headerPlaceholder.innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading header:", error));
+});

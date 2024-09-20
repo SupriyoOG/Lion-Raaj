@@ -12,50 +12,11 @@
     <link rel="stylesheet" href="/css/general.css" />
   </head>
   <body>
-    <header class="main-header">
-      <a class="logo" href="index.html"><h1>Lion Raaj</h1></a>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li>
-            <a href="/login/login.html"
-              >Login/Register <img src="/data/icons/login.png" alt=""
-            /></a>
-          </li>
-          <li>
-            <a href="catalog.html"
-              >View Shop <img src="/data/icons/store.png" alt=""
-            /></a>
-          </li>
-          <li>
-            <a href="contact.html"
-              >Contact Us <img src="/data/icons/contact.png" alt=""
-            /></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!-- 
-    <div class="menu">
-      <nav aria-label="Main navigation"></nav>
-        <ul>
-          <li>
-            <a href="/login/login.html"
-              >Login/Register <img src="/data/icons/login.png" alt=""
-            /></a>
-          </li>
-          <li>
-            <a href="catalog.html"
-              >View Shop <img src="/data/icons/store.png" alt=""
-            /></a>
-          </li>
-          <li>
-            <a href="contact.html"
-              >Contact Us <img src="/data/icons/contact.png" alt=""
-            /></a>
-          </li>
-        </ul>
-      </nav>
-    </div> -->
+    
+    <div id="header-placeholder"></div>
+
+    <!-- Placeholder where the header will be injected -->
+    <div id="header-placeholder"></div>
 
     <main>
       <section class="hero">
@@ -63,14 +24,17 @@
           <source src="/data/video/field.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+
+        <img src="/data/images/logo.png" alt="" class="logo-main" />
         <h2>Bold Grain Bold Taste</h2>
         <p>
           Discover our high-quality products. Our mission is to provide the best
-          for our customers.
+          for our customers, Since 1998.
         </p>
-        <a href="catalog.html" class="btn"
-          >Explore Our Products <img src="/data/icons/shopping_cart.png" alt=""
-        /></a>
+        <a href="catalog.html" class="btn">
+          Explore Our Products
+          <img src="/data/icons/shopping_cart.png" alt="Shopping Cart Icon" />
+        </a>
       </section>
 
       <section class="preview">
@@ -90,17 +54,6 @@
         </div>
       </section>
     </main>
-
-    <!-- Confirmation Popup -->
-    <div id="popup" class="popup-overlay" style="display: none">
-      <div class="popup-content">
-        <p id="popup-message">Are you sure you want to log out?</p>
-        <div class="popup-buttons">
-          <button id="confirm-btn">Yes</button>
-          <button id="cancel-btn">No</button>
-        </div>
-      </div>
-    </div>
 
     <footer class="main-footer">
       <p>&copy; 2024 Brand Name. All rights reserved.</p>

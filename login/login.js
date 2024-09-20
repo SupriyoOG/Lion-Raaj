@@ -1,6 +1,6 @@
 // Flip card function
 function flipCard() {
-  const card = document.querySelector(".card");
+  const card = document.querySelector(".login-card");
   card.classList.toggle("flipped");
 }
 

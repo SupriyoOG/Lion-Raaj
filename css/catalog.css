@@ -1,77 +1,137 @@
+/* General styles for catalog page */
 .catalog {
-  margin-top: calc(100vh - 80vh);
+  margin-top: 20px; /* Adjusted for better spacing on mobile */
+  padding: 20px; /* Added padding for mobile view */
 }
 
 h2 {
-  font-size: 3em;
-  padding: 20px;
+  font-size: 2.5em;
+  padding: 50px;
   text-align: center;
+  color: #333; /* Dark text color for better contrast */
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
-  gap: 40px;
-  padding: 5% 20%;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(400px, 1fr)
+  ); /* Adjusted for better mobile view */
+  gap: 20px;
+  padding: 20px;
 }
 
 .product {
   display: flex;
   flex-direction: column;
-  background-color: #ccc;
+  background-color: #f9f9f9; /* Light background for light theme */
   padding: 20px;
-  max-width: 100%;
+  cursor: default;
   border-radius: 8px;
-  color: white;
-  box-shadow: 0 10px 10px #888;
+  color: #333; /* Dark text color for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+.product:hover {
+  outline: 1px solid black;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.01);
+}
+
 .product img {
-  max-width: 100%; /* Ensure the image takes full width */
+  max-width: 100%;
   height: auto;
-  border-radius: 4px; /* Slight rounding for images */
-  margin-bottom: 10px; /* Space below the image */
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 .product-title {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin: 10px 0;
-  color: #111;
+  color: #111; /* Dark color for titles */
 }
 
 .product-description {
-  font-size: 0.9em;
-  color: #222; /* Lighter color for description */
+  font-size: 1em;
+  color: #555; /* Slightly lighter text for description */
   margin-bottom: 10px;
 }
 
 .product-price {
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: bold;
   margin-top: auto; /* Push the price to the bottom */
-  color: var(--secondary-color); /* Bright color for the price */
+  color: #000; /* Dark color for the price */
 }
 
 .buy-btn {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: #ffd700; /* Yellow background */
+  color: black;
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
   font-size: 1em;
   margin-top: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .buy-btn:hover {
-  background-color: var(--accent-color); /* Darker shade on hover */
+  background-color: #e6b800; /* Darker yellow on hover */
   color: black;
 }
 
 .buy-btn:active {
   transition: none;
+  outline: 2px solid black;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .product-grid {
+    padding: 10px;
+  }
+
+  .product {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+}
+
+.view {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  background-color: #ccc;
+  display: flex;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.view button {
+  background-color: white;
+  border: none;
+  padding: 20px;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+.view button:hover {
+  background-color: #eee;
+}
+
+.view button:active {
   outline: 2px solid black;
 }

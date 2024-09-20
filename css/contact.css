@@ -35,11 +35,39 @@ main a {
   text-decoration: none;
   opacity: 0;
   animation: pop 1s 3s ease forwards;
+  position: relative;
 }
 
-main a:hover {
-  text-shadow: 0 0 16px currentColor;
-  text-decoration: overline;
+main a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to right, red, blue);
+  width: 0%;
+  height: 2px;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+main a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  filter: blur(10px);
+  background: linear-gradient(to right, red, blue);
+  height: 8px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+main a:hover::after {
+  width: 100%;
+}
+
+main a:hover::before {
+  width: 100%;
 }
 
 @keyframes pop {
