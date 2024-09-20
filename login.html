@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lion Raaj - Login/Register</title>
-    <link rel="stylesheet" href="../css/general.css" />
-    <link rel="stylesheet" href="../login/login.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
     <div id="header-placeholder"></div>
 
     <div class="container">
-      <div class="login-card">
-        <div class="card-face front">
-          <h2>Login</h2>
-          <form onsubmit="validateLoginForm(event)">
-            <input type="text" placeholder="Username" required />
-            <input type="password" placeholder="Password" required />
-            <button type="submit">Login</button>
-          </form>
-          <div class="switch-form">
-            <p>
-              Don't have an account?
-              <a href="javascript:void(0)" onclick="flipCard()">Register</a>
-            </p>
-          </div>
-        </div>
+        <div class="login-card">
+            <div class="card-face front">
+                <h2>Login</h2>
+                <form onsubmit="validateLoginForm(event)">
+                    <input type="text" placeholder="Username" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit">Login</button>
+                </form>
+                <div class="switch-form">
+                    <p>
+                        Don't have an account?
+                        <a href="javascript:void(0)" onclick="flipCard()">Register</a>
+                    </p>
+                </div>
+            </div>
 
-        <div class="card-face back">
-          <h2>Register</h2>
-          <form onsubmit="validateRegisterForm(event)">
-            <input type="text" placeholder="Username" required />
-            <input type="email" placeholder="Email" required />
-            <input
-              id="password"
-              type="password"
-              placeholder="Password"
-              required
-            />
-            <button type="submit">Register</button>
-          </form>
-          <div class="switch-form">
-            <p>
-              Already have an account?
-              <a href="javascript:void(0)" onclick="flipCard()">Login</a>
-            </p>
-          </div>
+            <div class="card-face back">
+                <h2>Register</h2>
+                <form onsubmit="validateRegisterForm(event)">
+                    <input type="text" placeholder="Username" required />
+                    <input type="email" placeholder="Email" required />
+                    <input id="password" type="password" placeholder="Password" required />
+                    <button type="submit">Register</button>
+                </form>
+                <div class="switch-form">
+                    <p>
+                        Already have an account?
+                        <a href="javascript:void(0)" onclick="flipCard()">Login</a>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <script src="../js/main.js"></script>
-    <script src="../login/login.js"></script>
-    <script src="../login/index.js"></script>
-  </body>
+
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+</body>
 </html>
