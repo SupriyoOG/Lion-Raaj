@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lion Raaj - Login/Register</title>
+    <link rel="stylesheet" href="../css/general.css" />
     <link rel="stylesheet" href="login.css" />
-    <link rel="stylesheet" href="css/general.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
 
     <div class="container">
       <div class="login-card">
-        <!-- Front Face (Login Form) -->
         <div class="card-face front">
           <h2>Login</h2>
           <form onsubmit="validateLoginForm(event)">
@@ -28,7 +27,6 @@
           </div>
         </div>
 
-        <!-- Back Face (Register Form) -->
         <div class="card-face back">
           <h2>Register</h2>
           <form onsubmit="validateRegisterForm(event)">
@@ -51,8 +49,7 @@
         </div>
       </div>
     </div>
-
+    <script src="../js/main.js"></script>
     <script src="login.js"></script>
-    <script src="js/main.js"></script>
   </body>
 </html>
