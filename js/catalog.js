@@ -54,3 +54,22 @@ medium.addEventListener("click", () => {
 small.addEventListener("click", () => {
   catalog.style.gridTemplateColumns = "repeat(auto-fill,minmax(200px, 1fr))";
 });
+
+window.onload = function () {
+  const loadingContainer = document.getElementById("loading-container");
+  const loadingBar = document.getElementById("loading-bar");
+
+  // Show loading bar
+  loadingContainer.style.display = "block";
+
+  // Simulate loading process (you can replace this with actual loading logic)
+  setTimeout(() => {
+    loadingBar.style.width = "100%"; // Fill the loading bar
+  }, 100); // Adjust timing as needed
+
+  // Hide loading bar after loading is complete
+  setTimeout(() => {
+    loadingContainer.style.display = "none"; // Hide loading bar
+    loadingBar.style.width = "0"; // Reset width
+  }, 2000); // Match with the animation duration
+};
